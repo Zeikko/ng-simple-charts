@@ -4,28 +4,28 @@ angular.module('simpleCharts').directive('timeserieschart', function() {
     return {
         restrict: 'E',
         scope: {
-            'data': '='
+            'data': '=',
+            'options': '='
         },
         link: function(scope, element, attributes) {
 
             //TODO Move to somewhere else
-            function bindTooltip(tooltipFormatter) {
+            var bindTooltip = function(tooltipFormatter) {
                 return function(ev, pos, item) {
-                    console.log('tooltip');
                     if (item) {
-                        $("#tooltip").html(tooltipFormatter(item)).css({
+                        tooltipContainer.html(tooltipFormatter(item)).css({
                             top: pos.pageY + 10,
                             left: pos.pageX + 10,
                             border: '1px solid ' + item.series.color
                         }).fadeIn(200);
                     } else {
-                        $("#tooltip").hide();
+                        tooltipContainer.hide();
                     }
                 };
             }
 
             var chart = null,
-                options = {
+                defaultOptions = {
                     xaxis: {
                         mode: "time",
                         tickFormatter: function(value) {
@@ -42,10 +42,13 @@ angular.module('simpleCharts').directive('timeserieschart', function() {
                     }
                 };
 
+            var options = $.extend(defaultOptions, attributes.options || { });
+
             element.addClass('simple-chart-chart');
 
-            $(element.append('<div></div><div id="tooltip"></div>'));
+            $(element.append('<div></div><div class="simple-chart-tooltip"></div>'));
             var plotContainer = $(element.children()[0]);
+            var tooltipContainer = $(element.children()[1]);
             plotContainer.css({
                 width: element[0].clientWidth,
                 height: element[0].clientHeight
@@ -55,7 +58,7 @@ angular.module('simpleCharts').directive('timeserieschart', function() {
                 if (data) {
                     if (!chart) {
                         chart = $.plot(plotContainer, data, options);
-                        $(chart).bind("plothover", bindTooltip(function(item) {
+                        $(plotContainer).bind("plothover", bindTooltip(function(item) {
                             return moment(item.datapoint[0]).format("D.M.YYYY") + " : " + item.datapoint[1];
                         }));
                     } else {
@@ -64,7 +67,7 @@ angular.module('simpleCharts').directive('timeserieschart', function() {
                         chart.draw();
                     }
                 }
-            }, true);
+            });
         }
     };
 });
