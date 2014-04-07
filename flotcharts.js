@@ -1,3 +1,3 @@
 'use strict';
 
-angular.module('flotcharts', []);
+angular.module('ng-simple-charts', []);

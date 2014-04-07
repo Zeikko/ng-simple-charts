@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('mean.system').directive('timeserieschart', function() {
+angular.module('ng-simple-charts').directive('timeserieschart', function() {
     return {
         restrict: 'E',
         scope: {
@@ -42,7 +42,7 @@ angular.module('mean.system').directive('timeserieschart', function() {
                     }
                 };
 
-            element.addClass('flotchart');
+            element.addClass('ng-simple-chart-chart');
 
             $(element.append('<div></div><div id="tooltip"></div>'));
             var plotContainer = $(element.children()[0]);

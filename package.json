@@ -1,6 +1,6 @@
 {
   "name": "ng-simple-charts",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Simple reusable charts for Angular using Flotcharts",
   "main": "flotcharts.js",
   "scripts": {
