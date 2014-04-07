@@ -1,6 +1,6 @@
 {
     "name": "ng-simple-charts",
-    "version": "0.1.6",
+    "version": "0.1.7",
     "homepage": "https://github.com/Zeikko/ng-simple-charts",
     "description": "Simple reusable charts for Angular using Flotcharts",
     "main": "ng-simple-charts.js",
