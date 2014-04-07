@@ -42,7 +42,7 @@ angular.module('simpleCharts').directive('timeserieschart', function() {
                     }
                 };
 
-            element.addClass('ng-simple-chart-chart');
+            element.addClass('simple-chart-chart');
 
             $(element.append('<div></div><div id="tooltip"></div>'));
             var plotContainer = $(element.children()[0]);
