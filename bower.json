@@ -1,18 +1,23 @@
 {
-  "name": "ng-simple-charts",
-  "version": "0.1.4",
-  "homepage": "https://github.com/Zeikko/ng-simple-charts",
-  "description": "Simple reusable charts for Angular using Flotcharts",
-  "main": "ng-simple-charts.js",
-  "authors": [
-    "Jaakko Ojalehto"
-  ],
-  "license": "MIT",
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests"
-  ]
+    "name": "ng-simple-charts",
+    "version": "0.1.4",
+    "homepage": "https://github.com/Zeikko/ng-simple-charts",
+    "description": "Simple reusable charts for Angular using Flotcharts",
+    "main": "ng-simple-charts.js",
+    "authors": [
+        "Jaakko Ojalehto"
+    ],
+    "license": "MIT",
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "test",
+        "tests"
+    ],
+    "dependencies": {
+        "flot": "latest",
+        "jquery": "1.9.x",
+        "momentjs": "latest"
+    }
 }
