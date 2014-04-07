@@ -1,6 +1,6 @@
 'use strict';
 
-angular.module('ng-simple-charts').directive('timeserieschart', function() {
+angular.module('simpleCharts').directive('timeserieschart', function() {
     return {
         restrict: 'E',
         scope: {
