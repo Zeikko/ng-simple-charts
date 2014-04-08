@@ -1,0 +1,22 @@
+{
+    "name": "ng-simple-charts",
+    "description": "Simple reusable charts for Angular using Flotcharts",
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/Zeikko/ng-simple-charts.git"
+    },
+    "author": "Jaakko Ojalehto",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/Zeikko/ng-simple-charts/issues"
+    },
+    "homepage": "https://github.com/Zeikko/ng-simple-charts",
+    "devDependencies": {
+        "grunt": "latest",
+        "grunt-cli": "~0.1.11",
+        "grunt-contrib-cssmin": "^0.9.0",
+        "grunt-contrib-uglify": "^0.4.0",
+        "grunt-contrib-csslint": "^0.2.0",
+        "grunt-contrib-jshint": "latest"
+    }
+}
