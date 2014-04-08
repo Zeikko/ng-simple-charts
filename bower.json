@@ -16,8 +16,9 @@
         "tests"
     ],
     "dependencies": {
-        "flot": "latest",
+        "angular": "1.x.x",
+        "flot": "0.x.x",
         "jquery": "1.9.x",
-        "momentjs": "latest"
+        "momentjs": "2.x.x"
     }
 }

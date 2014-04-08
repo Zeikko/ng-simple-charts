@@ -2,7 +2,7 @@
 
 angular.module('simpleCharts').directive('timeserieschart', function() {
     return {
-        restrict: 'E',
+        restrict: 'A',
         scope: {
             'data': '=',
             'options': '='
