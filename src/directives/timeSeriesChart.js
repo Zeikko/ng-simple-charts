@@ -42,17 +42,18 @@ angular.module('simpleCharts').directive('timeserieschart', function() {
                     }
                 };
 
-            var options = $.extend(defaultOptions, attributes.options || { });
+            var options = $.extend(defaultOptions, attributes.options || {});
 
             element.addClass('simple-chart-chart');
-
-            $(element.append('<div></div><div class="simple-chart-tooltip"></div>'));
-            var plotContainer = $(element.children()[0]);
-            var tooltipContainer = $(element.children()[1]);
+            element.append('<div></div>');
+            var plotContainer = angular.element(element.children()[0]);
             plotContainer.css({
                 width: element[0].clientWidth,
                 height: element[0].clientHeight
             });
+ 
+            var tooltipContainer = angular.element('<div class="simple-chart-tooltip"></div>');
+            angular.element('body').append(tooltipContainer)
 
             scope.$watch('data', function(data) {
                 if (data) {
