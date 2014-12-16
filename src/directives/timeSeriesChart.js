@@ -42,7 +42,6 @@ angular.module('simpleCharts').directive('timeserieschart', function() {
                     }
                 };
 
-            var options = $.extend(defaultOptions, attributes.options || {});
 
             element.addClass('simple-chart-chart');
             element.append('<div></div>');
@@ -53,9 +52,10 @@ angular.module('simpleCharts').directive('timeserieschart', function() {
             });
  
             var tooltipContainer = angular.element('<div class="simple-chart-tooltip"></div>');
-            angular.element('body').append(tooltipContainer)
+            angular.element('body').append(tooltipContainer);
 
-            scope.$watch('data', function(data) {
+            var initialize = function(data, options) {
+                var options = $.extend(defaultOptions, options || {});
                 if (data) {
                     if (!chart) {
                         chart = $.plot(plotContainer, data, options);
@@ -68,6 +68,13 @@ angular.module('simpleCharts').directive('timeserieschart', function() {
                         chart.draw();
                     }
                 }
+            }
+
+            scope.$watch('data', function(data) {
+                initialize(data, attributes.options);
+            });
+            scope.$watch('options', function(options) {
+                initialize(attributes.data, options);
             });
         }
     };
